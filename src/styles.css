@@ -1,1 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {  
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    overflow-x: hidden;
+    background-color: #f9f9f9;
+}
+.navbar{
+    padding: 16px 0px;
+    background-color: #fff;
+}
+.navbar h1{
+    color: #C62550;
+    font-weight: 500;
+}
+.navbar a{
+    text-decoration: none;
+    color: #333333;
+    margin: 32px;
+}
+.links{
+    text-align: right;
+    margin: 0px 128px 16px 0px;
+}
+.productsList img{
+    width: 100%;
+    height: 70%;
+}
+.productsList mat-card{
+    width: 25%;
+    height: 400px;
+    margin:16px 16px 32px 16px;
+}
+
+.productsList{
+    justify-content: center;
+}
+.addBtn , .backBtn, .deletBtn{
+    text-align: end;
+    margin-top: 5px;
+}
+.detailsLink{
+    text-decoration: underline !important;
+    color: #C62550 !important;
+}
+.detailsPage img{
+width: 300px;
+height: 300px;
+/* margin: 20px; */
+}
+.detailsPage{
+    margin-top: 20px;
+    padding: 20px;
+}
+.backBtn button{
+background-color: #C62550;
+color: #fff;
+}
+.checkPage{
+    margin-top: 20px;
+    padding: 20px;
+}
+.checkPage img{
+    width: 300px;
+}
+.error{
+    color: red;
+}
