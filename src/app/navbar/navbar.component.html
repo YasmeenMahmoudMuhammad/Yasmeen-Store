@@ -1,9 +1,20 @@
 <div class="row navbar">
     <div class="col-4 text-center">
-        <h1>My Store</h1>
+        <a [routerLink]="['home']"  routerLinkActive="active"><img src="../assets/imgs/logo.PNG"></a>
+        <!-- <img src="../assets/imgs/logo.PNG"> -->
     </div>
-    <div class="col-7 links">
-        <a [routerLink]="['/productsList']"  routerLinkActive="active">Product List</a>
+    <div class="col-3">
+        <div class="row">
+            <input class="col-8 red-border" type="text" placeholder="Search" aria-label="Search">
+            <div class="col-2  input-group-append">
+            <span class="input-group-text lighten-3" id="basic-text1">
+                <i class="ri-search-line text-grey" aria-hidden="true"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-4 links">
+        <a [routerLink]="['/productsList']"  routerLinkActive="active">Products</a>
         <a [routerLink]="['/cart']" routerLinkActive="active">Cart</a>
+        <a [routerLink]="['/login']" routerLinkActive="active"><i class="ri-user-line"></i></a>
     </div>
 </div>

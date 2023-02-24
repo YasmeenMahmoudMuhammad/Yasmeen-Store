@@ -15,6 +15,13 @@ import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { RiAncientGateFill,  RiHome2Fill, RemixIconModule} from 'angular-remix-icon';
+const icons = {
+  RiAncientGateFill,
+  RiHome2Fill,
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +29,9 @@ import { FormsModule } from '@angular/forms';
     ProductDetailsComponent,
     CartComponent,
     CheckOutComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +43,8 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     HttpClientModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    RemixIconModule.configure(icons)
   ],
   providers: [],
   bootstrap: [AppComponent]

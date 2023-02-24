@@ -1,32 +1,33 @@
 <div class="row" style="justify-content: center;">
 <mat-card class="col-7 detailsPage" *ngFor="let card of products">
     <div class="row">
-        <div class="col-5">
+        <div  class="col-12 backBtn">
+            <button [routerLink]="['/productsList']" routerLinkActive="active"><i class="ri-arrow-go-back-line"></i></button>
+        </div>
+        <div class="col-3">
             <img mat-card-image src="{{card.url}}">
         </div>
-        <div class="col-7">
+        <div class="col-9 detailsPageInfo">
             <h2>{{card.name}}</h2>
-            <h3  style="display: inline-block; font-size: 20px;">Description : </h3>
-            <span>{{card.description}}</span><br>
-            <span style="font-size: 20px;">price:</span>
-            <span> {{card.price}} $</span><br><br>
 
-            <div class="col-12">
-                <span style="font-size: 20px;">Quantity :  </span>
-                <button (click)="increaseCount(card)" mat-raised-button>+</button>
-                {{card.quantity}}
-                <button (click)="decreaseCount(card)" mat-raised-button>-</button>
+            <span style="font-size: x-large;"> {{card.price}} $</span>
+
+            <h3>Description</h3>
+            <span style="font-weight: lighter;">{{card.description}}</span><br>
+            <br><span> {{card.price * card.quantity}} $</span>
+
+            <div class="row" style="align-items: center;">
+                <div class="col-3 countBtns">
+                    <button (click)="increaseCount(card)" mat-raised-button>+</button>
+                    {{card.quantity}}
+                    <button (click)="decreaseCount(card)" mat-raised-button>-</button>
+                </div>
+                <div   class="col-9 addBtn3">
+                    <button (click)="addItem(card)" mat-raised-button class="btn">Add to cart  <i class="ri-shopping-cart-fill"></i></button>
+                </div>
             </div><br>
-            <span style="font-size: 20px;">Total price of items: </span>
-            <span>{{card.price * card.quantity}} $</span>
-            <div class="row">
-                <div   class="col-12 addBtn">
-                    <button (click)="addItem(card)" mat-raised-button class="btn ">+ Add to cart</button>
-                </div>
-                <div  class="col-12 backBtn">
-                    <button [routerLink]="['/productsList']" routerLinkActive="active" mat-raised-button class="btn ">Back to Products Page</button>
-                </div>
-            </div>
+             
+               
         </div>
     </div>
 </mat-card>

@@ -1,19 +1,23 @@
 <div class="row productsList text-center">
     <mat-card class="col-4" *ngFor="let card of cards">
             <img mat-card-image src="{{card.url}}">
-            <h2 class=" text-center">{{card.name}}</h2>
+            <h2 class=" text-center" style="color: #5c5959 !important;">{{card.name}}</h2>
             <div class="row">
-                <div  class="col-6">
-                    <span>price: </span>
-                    <span style="font-size: 20px;">   {{card.price}} $</span>
+                <div  class="col-6" style="text-align: left;">
+                    <span style="font-size: 20px; color: #5c5959;">   {{card.price}} $</span>
                 </div>
-                <a class="col-6 detailsLink" [routerLink]="['/productDetails']" routerLinkActive="active" (click)="showItem(card)">Show more details</a>
                 <div class="col-6 addBtn">
                     <button (click)="increaseCount(card)" mat-raised-button>+</button>
-                    {{card.quantity}}
+                    <span>{{card.quantity}}</span>
                     <button (click)="decreaseCount(card)" mat-raised-button>-</button>
                 </div>
-                <div class="col-6 addBtn">
+            </div>
+            <div class="row" style="margin-top: 5px;">
+                <a class="col-6 detailsLink" [routerLink]="['/productDetails']" routerLinkActive="active" (click)="showItem(card)">
+                    <span>More Details</span>
+                    <i class="ri-arrow-right-s-line"></i>
+                </a>
+                <div class="col-6 addBtn2">
                     <button (click)="addItem(card)" mat-raised-button class="btn" >+ Add to cart</button>
                 </div>
             </div>
