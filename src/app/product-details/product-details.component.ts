@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {ProductsService} from '../products.service'
 import { elements } from '../model/Produtc';
+import { NotificationService } from '../services/notification.service';
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
@@ -11,7 +12,9 @@ export class ProductDetailsComponent implements OnInit {
   @Output() totalAmount = new EventEmitter();
   isAdded : Boolean = false;
 
-  constructor(private productsService : ProductsService) {
+  constructor(private productsService : ProductsService,
+    private notificationService: NotificationService,
+    ) {
     this.products = this.productsService.currentProduct;
   }
   increaseCount(product: any) {
@@ -29,9 +32,6 @@ export class ProductDetailsComponent implements OnInit {
    }
 
    addItem(product: any){
-    if(product.quantity == 0){
-      
-    }
     this.isAdded= false;
     this.productsService.cartList.forEach((item) => {
       if (item.id == product.id) {
@@ -47,8 +47,8 @@ export class ProductDetailsComponent implements OnInit {
     console.log('product is added')
 
   }
-    alert('this item add to cart successfully')
-  }
+  this.notificationService.success('Add to cart succesfully')
+}
   
   ngOnInit(): void {
 

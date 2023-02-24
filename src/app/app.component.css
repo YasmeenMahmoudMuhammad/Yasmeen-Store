@@ -1,0 +1,50 @@
+.error_toaster {
+    position: fixed;
+    bottom: 60px;
+    left: 25%;
+    width: 100%;
+    z-index: 999999;
+    text-align: center;
+    padding: 8px;
+    background-color: #FFB7B7;
+    border: 2px solid #FF4D4D;
+    color: #333333;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    display: none;
+}
+
+.success_toaster {
+    position: fixed;
+    bottom: 60px;
+    left: 25%;
+    width: 100%;
+    z-index: 999999;
+    text-align: center;
+    padding: 8px;
+    background-color: #B6E9D7;
+    border: 2px solid #00B374;
+    color: #333333;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    display: none;
+}
+
+.warning_toaster {
+    position: fixed;
+    bottom: 60px;
+    left: 25%;
+    width: 100%;
+    z-index: 999999;
+    text-align: center;
+    padding: 8px;
+    background-color: #FFE999;
+    border: 2px solid #FFC700;
+    color: #333333;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    display: none;
+}

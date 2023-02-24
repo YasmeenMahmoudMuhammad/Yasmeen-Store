@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { elements } from '../model/Produtc';
 import {ProductsService} from '../products.service';
+import { NotificationService } from '../services/notification.service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -18,6 +19,7 @@ creditCard: number | undefined;
 public products: elements[] = [];
 
 constructor(private productsService: ProductsService,
+  private notificationService: NotificationService,
   private Router: Router) { 
 }
 
@@ -31,14 +33,17 @@ constructor(private productsService: ProductsService,
     });
   }
   remove(id: number) {
-    this.productsService.deleteProduct(id);
-    this.products = this.productsService.getCartProducts();
-      // this.totalPrice -= this.products.price;
-      this.products.forEach((cartItem) => {
-        this.removedItem = this.totalPrice - cartItem.quantity *cartItem.price;
-        return this.totalPrice -= this.removedItem
-      });
-    alert('product has been deleted successfully');
+    if (confirm("Are you sure to delete this item"))
+    {
+      this.productsService.deleteProduct(id);
+      this.products = this.productsService.getCartProducts();
+        this.products.forEach((cartItem) => {
+          this.removedItem = this.totalPrice - cartItem.quantity *cartItem.price;
+          this.totalPrice -= this.removedItem;
+        });
+        this.notificationService.success('Deleted succesfully');
+    }
+
   }
 
   orderQuantity(product: any) {

@@ -1,5 +1,5 @@
 <div class="row cart-page">
-    <mat-card class="col-6 detailsPage">
+    <!-- <mat-card class="col-6 detailsPage">
         <div class="row"  *ngFor="let card of products" (totalAmount)="orderQuantity(card)" style="margin-top: 20px;">
             <div class="col-5">
                 <img mat-card-image src="{{card.url}}">
@@ -21,6 +21,31 @@
                  </div>
             </div>
         </div>  
+        <mat-card class="col-12 text-center">
+            <span style="font-size: 20px;">Total Order Price   </span><span style="font-size: 30px;">{{ totalPrice }} $</span>
+        </mat-card>
+    </mat-card> -->
+    <mat-card class="col-6 detailsPage">
+        <div class="row"   *ngFor="let card of products" (totalAmount)="orderQuantity(card)" style="margin: 20px 0px 5px 10px;">
+            <div  class="col-12 deletBtn">
+                <button (click)="remove(card.id)"><i class="ri-close-fill"></i></button>
+            </div>
+            <div class="col-3">
+                <img mat-card-image src="{{card.url}}">
+            </div>
+            <div class="col-9 detailsPageInfo">
+                <h2>{{card.name}}</h2>
+    
+                <span style="font-size: 20px;"> {{card.price}} $</span>
+                <br><br>
+                <span style="font-size: 20px;">Quantity ({{card.quantity}})</span>
+                <!-- <span> {{card.quantity}} </span><span>items</span> -->
+                 <br><br>
+                <span  style="font-size: x-large;">Total price ({{card.price * card.quantity}} $)</span>
+                <span></span>
+
+            </div>
+        </div>
         <mat-card class="col-12 text-center">
             <span style="font-size: 20px;">Total Order Price   </span><span style="font-size: 30px;">{{ totalPrice }} $</span>
         </mat-card>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
 import {ProductsService} from '../products.service';
+import { NotificationService } from '../services/notification.service';
 @Component({
   selector: 'app-products-list',
   templateUrl: './products-list.component.html',
@@ -10,7 +11,9 @@ export class ProductsListComponent implements OnInit {
 index: number =0 ;
 isAdded : Boolean = false;
 
-  constructor(private productsService:ProductsService) {
+  constructor(private productsService:ProductsService,
+    private notificationService: NotificationService,
+    ) {
    }
 
   addItem(product: any){
@@ -30,10 +33,7 @@ isAdded : Boolean = false;
 
   }
 
-    alert('this item add to cart successfully')
-    // if(product.quantity == 0){
-    
-    // }
+  this.notificationService.success('Add to cart succesfully')
   }
   
   increaseCount(product: any) {

@@ -6,6 +6,129 @@ body {
     overflow-x: hidden;
     background-color: #fff;
 }
+.error_toaster_show {
+    position: fixed;
+    bottom: 60px;
+    left: 25%;
+    width: 50%;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: #FFB7B7;
+    border: 2px solid #FF4D4D;
+    color: #333333;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.error_toaster_show h5 {
+    margin-bottom: 0px !important;
+    font-weight: 500;
+    text-align: left;
+}
+
+.error_toaster_show img {
+    text-align: left;
+    padding-right: 12px;
+}
+
+.error_toaster_show button {
+    font-size: 24px !important;
+    height: 35px !important;
+    width: 35px !important;
+    position: absolute;
+    right: 20px;
+}
+
+.error_toaster_show button i {
+    vertical-align: unset !important;
+}
+
+.warning_toaster_show {
+    position: fixed;
+    bottom: 60px;
+    left: 25%;
+    width: 50%;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: #FFE999;
+    border: 2px solid #FFC700;
+    color: #333333;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.warning_toaster_show h5 {
+    margin-bottom: 0px !important;
+    font-weight: 500;
+    text-align: left;
+}
+
+.warning_toaster_show img {
+    text-align: left;
+    padding-right: 12px;
+}
+
+.warning_toaster_show button {
+    font-size: 24px !important;
+    height: 35px !important;
+    width: 35px !important;
+    position: absolute;
+    right: 20px;
+}
+
+.warning_toaster_show button i {
+    vertical-align: unset !important;
+}
+
+.success_toaster_show {
+    position: fixed;
+    bottom: 60px;
+    left: 25%;
+    width: 50%;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: #B6E9D7;
+    border: 2px solid #00B374;
+    color: #333333;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.success_toaster_show h5 {
+    margin-bottom: 0px !important;
+    font-weight: 500;
+    text-align: left;
+}
+
+.success_toaster_show img {
+    text-align: left;
+    padding-right: 12px;
+}
+
+.success_toaster_show button {
+    font-size: 24px !important;
+    height: 35px !important;
+    width: 35px !important;
+    position: absolute;
+    right: 20px;
+}
+
+.success_toaster_show button i {
+    vertical-align: unset !important;
+}
+.mat-typography h5 {
+    font: 400 calc(20px * 0.83) / 20px Roboto, "Helvetica Neue", sans-serif !important;
+    margin: 0 0 12px;
+}
 .navbar{
     padding: 16px 0px;
     background-color: #fff;
@@ -49,7 +172,7 @@ body {
 }
 .detailsLink{
     text-decoration: none !important;
-    color: #5c5959!important;
+    color: #607b9a !important;
     display: flex;
 
 }
@@ -82,7 +205,11 @@ body {
     margin-left: 7px;
     color: #fff;
 }
-.backBtn button{
+.deletBtn i, .deletBtn i:hover{
+    font-size: 35px;
+    color: #FF4D4D;
+}
+.backBtn button , .deletBtn button{
     border: none !important;
     background-color: #fff;
 }
