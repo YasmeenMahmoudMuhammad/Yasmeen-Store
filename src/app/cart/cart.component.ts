@@ -1,5 +1,4 @@
 import { Component, OnInit} from '@angular/core';
-import { Router } from '@angular/router';
 import { elements } from '../model/Produtc';
 import {ProductsService} from '../products.service';
 import { NotificationService } from '../services/notification.service';
@@ -9,28 +8,26 @@ import { NotificationService } from '../services/notification.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-totalPrice: number = 0.0;
 removedItem :number =0;
 quantity: number | undefined;
-cardNumberPattern: string = '^[0-9]*$';
-fullName: string | undefined;
-address: string | undefined;
-creditCard: number | undefined;
+totalPrice: number = 0.0;
+toggleEmptyCart :boolean =true;
 public products: elements[] = [];
 
 constructor(private productsService: ProductsService,
-  private notificationService: NotificationService,
-  private Router: Router) { 
+  private notificationService: NotificationService,) { 
 }
-
-  onSubmit(): void {
-    this.Router.navigate(['/confirmation', this.fullName, this.totalPrice]);
-   }
-
+// showEnptyCart(){
+//   if(this.totalPrice == 0){
+//     this.toggleEmptyCart =false;
+//   }
+// }
    calcTotalPrice() {
     this.products.forEach((cartItem) => {
       this.totalPrice += cartItem.quantity * cartItem.price;
     });
+    
+
   }
   remove(id: number) {
     if (confirm("Are you sure to delete this item"))
@@ -42,8 +39,9 @@ constructor(private productsService: ProductsService,
           this.totalPrice -= this.removedItem;
         });
         this.notificationService.success('Deleted succesfully');
-    }
+        this.calcTotalPrice();
 
+    }
   }
 
   orderQuantity(product: any) {
@@ -58,7 +56,9 @@ constructor(private productsService: ProductsService,
   ngOnInit(): void {
     this.products = this.productsService.cartList;
     this.calcTotalPrice();
-
+    if(this.totalPrice == 0){
+      this.toggleEmptyCart =!this.toggleEmptyCart;
+    }
+    
   }
-
 }

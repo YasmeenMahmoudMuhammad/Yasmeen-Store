@@ -52,5 +52,18 @@
     <p class="benefit">Products</p>
     <h1>Our Popular Products</h1>
     <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam.</p>
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" >
+        <!-- <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+             <img src="{{ slide.img }}" alt="" width="100%">
+        </div> -->
+        <mat-card ngxSlickItem class="col-4 slide" *ngFor="let card of cards">
+           <div style="height: 350px !important;"> <img mat-card-image src="{{card.url}}" style="height: 100% !important;"></div>
+           <div class="slickContent">
+                <h2  style="color: #5c5959 !important;">{{card.name}}</h2>
+                <p style="font-size: 20px; color: #909090;">   {{card.description}} </p>
 
+                <h3 style="font-size: 25px; color: #5c5959;">   {{card.price}} $</h3>
+            </div>
+        </mat-card>
+    </ngx-slick-carousel>
 </div>

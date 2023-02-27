@@ -159,8 +159,9 @@ body {
 }
 .productsList mat-card{
     width: 25%;
-    height: 400px;
+    height: 444px;
     margin:16px 16px 32px 16px;
+    padding: 16px 25px !important;
 }
 
 .productsList{
@@ -295,13 +296,11 @@ body {
     position: absolute;
     left: 0;
     top: 50%;
-    transform: translate(90%,-32%);
-    width: 50%;
+    transform: translate(180%,-32%);
+    width: 34%;
     padding: 50px;
     background-color: #34485E;
     color: white;
-    display: flex;
-    justify-content: flex-end;
 }
 .text p{
     font-weight: lighter;
@@ -309,7 +308,13 @@ body {
 .hereBtn {
     border-radius: 2rem !important;
     color: #fff;
-    background-color: #aad0e9;
+    background-color: #a0c4dc;
+    margin: 6px !important;
+}
+.hereBtn:hover {
+    border-radius: 2rem !important;
+    color: #fff;
+    background-color: #a0c4dc;
     margin: 6px !important;
 
 }
@@ -377,4 +382,43 @@ footer {
     color: #909090;
     font-weight: 400;
     font-size: larger;
+}
+.slick-prev:before, .slick-next:before {
+    font-family: 'slick';
+    font-size: 32px !important;
+    line-height: 1 !important;
+    color: #999999 !important;
+    opacity: 0.75;
+    -webkit-font-smoothing: antialiased;
+}
+.slickContent{
+    text-align: left !important;
+    padding: 5px;
+}
+.slide{
+    margin-left: 30px !important;
+    box-shadow: none !important;
+    border-radius: 0px !important;
+
+}
+.totalPrice{
+    margin-top: 20px;
+    align-items: center;
+    display: inline-flex !important;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+}
+.totalPrice button{
+    width: 300px;
+
+}
+.totalPrice span{
+    font-size: 30px;
+    color: #34485E;
+    /* font-size: large; */
+    font-weight: 500;
+}
+.cart-page{
+    display: flex !important;
+    justify-content: center;
 }

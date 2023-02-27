@@ -19,6 +19,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RiAncientGateFill,  RiHome2Fill, RemixIconModule} from 'angular-remix-icon';
 import { FooterComponent } from './footer/footer.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 const icons = {
   RiAncientGateFill,
   RiHome2Fill,
@@ -46,7 +48,9 @@ const icons = {
     HttpClientModule,
     MatFormFieldModule,
     FormsModule,
-    RemixIconModule.configure(icons)
+    RemixIconModule.configure(icons),
+    SlickCarouselModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

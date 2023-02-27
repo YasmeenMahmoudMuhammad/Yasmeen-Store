@@ -1,1 +1,54 @@
-<p>login works!</p>
+<div class="row">
+    <mat-card class="col-6 detailsPage">
+        <h1>User Information</h1>
+        <form #form="ngForm" (ngSubmit)="onSubmit()" class="row" autocomplete="off" novalidate>
+            <mat-form-field appearance="fill" class="col-8">
+                <mat-label>Full Name</mat-label>
+                <input matInput type="text" [(ngModel)]="fullName" name="fullName"  minlength="3"  placeholder="minimum 3 characters"  required #userFullName="ngModel" />
+            </mat-form-field>
+            <div *ngIf="userFullName.invalid && userFullName.dirty" class="error">
+                <div *ngIf="userFullName.errors?.['required']">
+                Please provide your full Name for your order request.
+                </div>
+                <div *ngIf="userFullName.errors?.['minlength']">
+                The full name must contain at least 3 characters.
+                </div>
+            </div>
+            <mat-form-field appearance="fill" class="col-8">
+                <mat-label>Address</mat-label>
+                <input matInput type="text"   minlength="6"  [(ngModel)]="address"  name="address"  placeholder="minimum 6 characters"   required  #userAddress="ngModel"/>
+            </mat-form-field>
+            <div *ngIf="userAddress.invalid && userAddress.dirty" class="error">
+                <div *ngIf="userAddress.errors?.['required']">
+                Please provide your userAddress for your order request.
+                </div>
+                <div *ngIf="userAddress.errors?.['minlength']">
+                The full name must contain at least 6 characters.
+                </div>
+            </div>
+            <mat-form-field appearance="fill" class="col-8">
+                <mat-label>Credit Card Numbers</mat-label>
+                <input matInput type="text"  [(ngModel)]="creditCard"  name="cardNumber"  placeholder="16-digit number"  minlength="16"  maxlength="16"  required [pattern]="cardNumberPattern"  #creditCardNumber="ngModel"/>
+                <mat-hint>we'll never share your payment details with any one else.</mat-hint>
+            </mat-form-field>
+            <br>
+            <br>
+            <div *ngIf="creditCardNumber.invalid && creditCardNumber.dirty" class="error">
+                <div *ngIf="creditCardNumber.errors?.['required']">
+                Please provide your credit card number for your order request.
+                </div>
+                <div *ngIf="creditCardNumber.errors?.['minlength']">
+                The credit card number must contain at least 16 characters.
+                </div>
+                <div *ngIf="creditCardNumber.errors?.['maxlength']">
+                The credit card number must contain at maximum 16 characters.
+                </div>
+                <div *ngIf="creditCardNumber.errors?.['pattern']">
+                The credit card number must only contains numbers.
+                </div>
+            </div>
+
+            <button type="submit"class="col-8"  mat-raised-button [disabled]="form.invalid" color="primary" [routerLink]="['/check-out']" routerLinkActive="active">Order Now</button>
+         </form>
+    </mat-card>
+</div>
