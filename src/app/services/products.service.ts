@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { elements } from './model/Produtc';
-import { CartComponent } from './cart/cart.component';
+import { CartComponent } from '../cart/cart.component';
 import { Output, EventEmitter  } from '@angular/core';
+import { elements } from '../model/Produtc';
 
 @Injectable({
   providedIn: 'root'

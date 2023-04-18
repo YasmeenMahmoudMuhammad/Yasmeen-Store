@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { RiAncientGateFill,  RiHome2Fill, RemixIconModule} from 'angular-remix-icon';
 import { FooterComponent } from './footer/footer.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const icons = {
   RiAncientGateFill,
@@ -35,7 +36,8 @@ const icons = {
     NavbarComponent,
     HomeComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

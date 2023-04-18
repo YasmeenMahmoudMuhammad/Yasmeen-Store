@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import {ProductsService} from '../products.service'
 import { elements } from '../model/Produtc';
 import { NotificationService } from '../services/notification.service';
+import { ProductsService } from '../services/products.service';
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',

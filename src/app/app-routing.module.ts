@@ -6,14 +6,17 @@ import { CartComponent } from './cart/cart.component';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = [
-  { path: 'home', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  // {path: '' , component:HomeComponent},
   {path: 'home' , component:HomeComponent},
   {path: 'productsList' , component: ProductsListComponent},
   {path: 'productDetails', component: ProductDetailsComponent},
   {path: 'cart', component: CartComponent },
   {path: 'check-out', component: CheckOutComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
